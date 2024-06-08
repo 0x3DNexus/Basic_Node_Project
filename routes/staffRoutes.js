@@ -25,7 +25,9 @@ router.post('/login', async (req, res) =>{
             randomNumber: Math.random()
         }
 
-        const token = genToken(payload)
+        const token = genToken(payload);
+        console.log(token);
+        
         res.status(200).send({"token": token});
     }
     catch(error){
@@ -53,6 +55,7 @@ router.post('/register', async (req, res) =>{
         }
 
         const token = genToken(payload);
+        console.log(token);
 
         res.status(200).send({"response": "Data Saved !!", "token": token});
     }
